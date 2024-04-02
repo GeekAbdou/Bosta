@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Home from './components/Home';
-import Tracking from './components/Tracking';
+import Tracking from './components/ShipmentTracker';
 function App() {
   return (
     <BrowserRouter>
