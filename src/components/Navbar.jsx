@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/jsx-no-comment-textnodes */
 
@@ -5,8 +6,12 @@ import React, { useState } from 'react';
 import './Navbar.scss';
 import logo from '../assets/logo.svg';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import cookies from 'js-cookie';
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
+
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -18,6 +23,12 @@ const Navbar = () => {
       toggleMenu();
     }
   };
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
+  const currentLanguageCode = cookies.get('i18next') || 'en';
 
   return (
     <nav className="navbar">
@@ -33,17 +44,17 @@ const Navbar = () => {
         <div className="navbar__section navbar__section--center">
           <div className="navbar__item">
             <Link className="navbar__item--link" to="/">
-              الرئيسية
+              {t('NAV_HOME')}
             </Link>
           </div>
           <div className="navbar__item">
             <Link className="navbar__item--link" to="/Prices">
-              الأسعار
+              {t('NAV_PRICES')}
             </Link>
           </div>
           <div className="navbar__item">
             <Link className="navbar__item--link" to="/Sales">
-              كلم المبيعات
+              {t('NAV_SALES')}
             </Link>
           </div>
         </div>
@@ -54,23 +65,45 @@ const Navbar = () => {
               className="navbar__item--link navbar__item--tracking "
               to="/Tracking"
             >
-              تتبع شحنتك
+              {t('NAV_TRACKING')}
             </Link>
           </div>
           <div className="navbar__item signin-section">
             <Link className="navbar__item--link" to="/SginIn">
-              تسجيل الدخول
+              {t('NAV_SIGNIN')}
             </Link>
           </div>
 
-          <div className="navbar__item--language">ENG</div>
+          {currentLanguageCode !== 'ar' && (
+            <div
+              className="navbar__item--language"
+              onClick={() => changeLanguage('ar')}
+              role="button"
+              tabIndex={0}
+            >
+              عربي
+            </div>
+          )}
+          {currentLanguageCode !== 'en' && (
+            <div
+              className="navbar__item--language"
+              onClick={() => changeLanguage('en')}
+              role="button"
+              tabIndex={0}
+            >
+              ENG
+            </div>
+          )}
         </div>
 
         <div className="navbar__mobileSection">
           <div className="navbar__mobileItem">
-            <a href="#" className="navbar__mobileItem--link">
-              تتبع شحنتك
-            </a>
+            <Link
+              className="navbar__item--link navbar__mobileItem--link "
+              to="/Tracking"
+            >
+              {t('NAV_TRACKING')}
+            </Link>
           </div>
 
           <div

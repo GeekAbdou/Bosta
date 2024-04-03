@@ -1,14 +1,43 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import Home from './components/Home';
-import Tracking from './components/ShipmentTracker';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { useTranslation } from 'react-i18next';
+import cookies from 'js-cookie';
+import Home from './views/Home';
+import Tracking from './views/Tracking';
+const queryClient = new QueryClient();
+
+const languages = [
+  {
+    code: 'en',
+    name: 'English',
+  },
+  {
+    code: 'ar',
+    name: 'العربية',
+    dir: 'rtl',
+  },
+];
+
 function App() {
+  const currentLanguageCode = cookies.get('i18next') || 'en';
+  const currentLanguage = languages.find((l) => l.code === currentLanguageCode);
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    console.log('Setting page stuff');
+    document.body.dir = currentLanguage.dir || 'ltr';
+    document.title = t('App_TITLE');
+  }, [currentLanguage, t]);
+
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Tracking" element={<Tracking />} />
-      </Routes>
+      <QueryClientProvider client={queryClient}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Tracking" element={<Tracking />} />
+        </Routes>
+      </QueryClientProvider>
     </BrowserRouter>
   );
 }

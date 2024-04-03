@@ -1,0 +1,74 @@
+.shipment-timeline {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  &__status {
+    padding: 16px;
+    border-bottom: 1px solid #ececec;
+
+    h2 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #666;
+    }
+  }
+
+  &__events {
+    padding: 16px;
+
+    &__event {
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 8px 0;
+
+      &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        bottom: -16px;
+        left: 20px;
+        width: 2px;
+        height: 40px;
+        background: #d8d8d8;
+      }
+
+      &-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: green;
+        margin-right: 16px;
+      }
+
+      &-info {
+        &-date {
+          font-size: 14px;
+          color: #333;
+          margin-bottom: 4px;
+        }
+
+        &-state {
+          font-size: 14px;
+          color: #666;
+        }
+
+        &-reason {
+          font-size: 14px;
+          color: #999;
+          margin-top: 4px;
+        }
+      }
+
+      &-line {
+      }
+    }
+  }
+}
