@@ -8,7 +8,9 @@ import Cookies from 'js-cookie';
 const ShipmentTracker = () => {
   const [trackingNumber, setTrackingNumber] = useState('');
   const [queryId, setQueryId] = useState('');
+
   const shipmentQuery = useShipment(queryId);
+  // const BostaShipmentQuery = useShipment(queryId, true);
 
   const currentLanguageCode = Cookies.get('i18next') || 'en';
 
@@ -28,7 +30,7 @@ const ShipmentTracker = () => {
 
   const handleKeyDown = (event) => {
     if (event.keyCode === 13) {
-      // 13 keycode is Enter
+      // 13 key is Enter
       handleSearchClick();
     }
   };

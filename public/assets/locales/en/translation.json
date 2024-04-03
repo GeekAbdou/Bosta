@@ -7,5 +7,12 @@
   "NAV_PRICES": "Prices",
   "NAV_SALES": "Contact Sales",
   "NAV_SIGNIN": "Sign In",
-  "NAV_TRACKING": "Tracking your Shipment"
+  "NAV_TRACKING": "Tracking your Shipment",
+
+  "DELIVERED": "Delivered",
+  "TICKET_CREATED": "Ticket Created",
+  "PACKAGE_RECEIVED": "Package Received",
+  "NOT_YET_SHIPPED": "Not Yet Shipped",
+  "OUT_FOR_DELIVERY": "Out for Delivery",
+  "RECEIVED_DELIVERY_LOCATION": "Received at Delivery Location"
 }
