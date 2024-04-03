@@ -4,7 +4,9 @@
 
 import React, { useState } from 'react';
 import './Navbar.scss';
-import logo from '../assets/logo.svg';
+import ARLogo from '../assets/ar-logo.svg';
+import ENLogo from '../assets/en-logo.svg';
+
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import cookies from 'js-cookie';
@@ -36,7 +38,12 @@ const Navbar = () => {
         <div className="navbar__section navbar__section--left">
           <div className="navbar__item">
             <Link className="navbar__item--logo" to="/">
-              <img src={logo} alt="Logo" className="navbar__item--img" />
+              {currentLanguageCode !== 'ar' && (
+                <img src={ARLogo} alt="Logo" className="navbar__item--img" />
+              )}
+              {currentLanguageCode !== 'en' && (
+                <img src={ENLogo} alt="Logo" className="navbar__item--img" />
+              )}
             </Link>
           </div>
         </div>
