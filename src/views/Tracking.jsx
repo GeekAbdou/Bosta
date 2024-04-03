@@ -86,6 +86,7 @@ const ShipmentTracker = () => {
           </button>
         </div>
       </div>
+
       {shipmentQuery.isLoading && <div className="loading">Loading...</div>}
       {shipmentQuery.isError && (
         <div className="error">
