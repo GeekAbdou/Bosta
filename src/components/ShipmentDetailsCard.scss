@@ -1,0 +1,101 @@
+.shipmentDetails {
+  display: flex;
+  border-radius: 4px;
+  max-width: 800px;
+  margin: auto;
+  flex-direction: row;
+  width: 100%;
+  max-width: 856px;
+  gap: 16px;
+  &__Events {
+    flex-grow: 2;
+    &__title {
+      padding: 0;
+      margin: 10px 0;
+    }
+    &__tableContainer {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      &__table {
+        width: 100%;
+        border-collapse: collapse;
+
+        thead {
+          background-color: #fbfbfb;
+          color: #202020;
+
+          th {
+            padding: 10px 15px;
+            font-weight: bold;
+          }
+        }
+
+        tbody {
+          td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+          }
+        }
+      }
+    }
+  }
+
+  &__Address {
+    flex-grow: 1;
+    &__title {
+      padding: 0;
+      margin: 10px 0;
+    }
+    &__addressDetails {
+      display: flex;
+      word-wrap: anywhere;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 12px;
+      width: 200px;
+      color: #202020;
+      background-color: #fbfbfb;
+    }
+    &__report {
+      display: flex;
+      word-wrap: anywhere;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 12px;
+      width: 200px;
+      justify-content: space-between;
+      margin: 20px 0;
+
+      & img {
+        margin: 0 0 0 10px;
+        height: 50px;
+        width: 50px;
+      }
+      & div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        & span {
+          font-weight: bold;
+          font-size: 12px;
+          margin-bottom: 8px;
+        }
+        & button {
+          color: white;
+          background-color: #e30613;
+          font-size: 12px;
+          border: none;
+          padding: 8px 18px;
+          border-radius: 12px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.rtl {
+  text-align: right;
+  direction: rtl;
+}

@@ -10,7 +10,7 @@ const ShipmentTracker = () => {
   const [queryId, setQueryId] = useState('');
 
   const shipmentQuery = useShipment(queryId);
-  // const BostaShipmentQuery = useShipment(queryId, true);
+  const BostaShipmentQuery = useShipment(queryId, true);
 
   const currentLanguageCode = Cookies.get('i18next') || 'en';
 
@@ -40,6 +40,12 @@ const ShipmentTracker = () => {
       console.log('Shipment data:', shipmentQuery.data);
     }
   }, [shipmentQuery.data]);
+
+  useEffect(() => {
+    if (BostaShipmentQuery.data) {
+      console.log('Shipment data:', BostaShipmentQuery.data);
+    }
+  }, [BostaShipmentQuery.data]);
 
   return (
     <>
@@ -94,7 +100,10 @@ const ShipmentTracker = () => {
         </div>
       )}
       {shipmentQuery.data && (
-        <ShipmentDetails shipmentData={shipmentQuery.data} />
+        <ShipmentDetails
+          shipmentData={shipmentQuery.data}
+          BostaData={BostaShipmentQuery.data}
+        />
       )}
     </>
   );

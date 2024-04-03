@@ -14,5 +14,16 @@
   "PACKAGE_RECEIVED": "Package Received",
   "NOT_YET_SHIPPED": "Not Yet Shipped",
   "OUT_FOR_DELIVERY": "Out for Delivery",
-  "RECEIVED_DELIVERY_LOCATION": "Received at Delivery Location"
+  "RECEIVED_DELIVERY_LOCATION": "Received at Delivery Location",
+  "WAITING_FOR_CUSTOMER_ACTION": "Waiting for Customer Action",
+  "IN_TRANSIT": "In Transit",
+  "DELIVERED_TO_SENDER": "Delivered to Sender",
+
+  "REPORT_TITLE": "Missing Your Shipment ?!",
+  "REPORT_BUTTON": "Report a Problem",
+
+  "STATE": "State",
+  "DATE": "Date",
+  "TIME": "Time",
+  "HUB": "Hub"
 }

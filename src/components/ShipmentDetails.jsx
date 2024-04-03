@@ -1,8 +1,9 @@
 import React from 'react';
 import './ShipmentDetails.scss';
 import TrackerStatusCard from './TrackerStatusCard';
+import ShipmentDetailsCard from './ShipmentDetailsCard';
 
-const ShipmentTimeline = ({ shipmentData }) => {
+const ShipmentDetails = ({ shipmentData, BostaData }) => {
   if (
     !shipmentData ||
     !shipmentData.CurrentStatus ||
@@ -11,17 +12,21 @@ const ShipmentTimeline = ({ shipmentData }) => {
     return <div>Loading shipment data...</div>;
   }
 
-  // const { CurrentStatus, TransitEvents } = shipmentData;
+  if (!BostaData || !BostaData.CurrentStatus || !BostaData.TransitEvents) {
+    return <div>Loading shipment data...</div>;
+  }
+
+  const { CurrentStatus, TransitEvents } = shipmentData;
 
   return (
     <>
-      <TrackerStatusCard />
-      <ShipmentDetailsCard />
+      <TrackerStatusCard statusData={CurrentStatus} />
+      <ShipmentDetailsCard transitData={TransitEvents} BostaData={BostaData} />
     </>
   );
 };
 
-export default ShipmentTimeline;
+export default ShipmentDetails;
 
 /*
 {

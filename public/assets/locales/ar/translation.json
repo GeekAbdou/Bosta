@@ -7,5 +7,23 @@
   "NAV_PRICES": "الأسعار",
   "NAV_SALES": "كلم المبيعات",
   "NAV_SIGNIN": "تسجيل الدخول",
-  "NAV_TRACKING": "تتبع شحنتك"
+  "NAV_TRACKING": "تتبع شحنتك",
+
+  "DELIVERED": "تم التوصيل",
+  "TICKET_CREATED": "تم إنشاء الشحنة",
+  "PACKAGE_RECEIVED": "تم استلام الشحنة من التاجر",
+  "NOT_YET_SHIPPED": "لم يتم الشحن بعد",
+  "OUT_FOR_DELIVERY": "الشحنة خرجت للتوصيل",
+  "RECEIVED_DELIVERY_LOCATION": "الشحنة خرجت للتوصيل",
+  "WAITING_FOR_CUSTOMER_ACTION": "في انتظار تعليمات العميل",
+  "IN_TRANSIT": "في الشحن",
+  "DELIVERED_TO_SENDER": "تم ارجاع الشحنة الي التاجر",
+
+  "REPORT_TITLE": "هل يوجد مشكلة في شحنتك ؟!",
+  "REPORT_BUTTON": "إبلاغ عن مشكلة",
+
+  "STATE": "حالة الشحنة",
+  "DATE": "التاريخ",
+  "TIME": "الوقت",
+  "HUB": "الفرع"
 }
