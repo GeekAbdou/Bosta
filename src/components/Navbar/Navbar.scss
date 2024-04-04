@@ -98,10 +98,11 @@
 
   padding: 0 $padding;
   background-color: white;
-
+  border: 1px solid #e5e5e5;
   position: absolute;
-  top: 100%;
+  top: 9%;
   left: 0;
+  border-radius: 4px;
 
   .navbar__links {
     list-style: none;

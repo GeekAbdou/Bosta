@@ -57,12 +57,13 @@ const Navbar = () => {
             <div className="navbar__item">
               <Dropdown
                 parentElement={
-                  <span
+                  <Link
                     key="search-orders__dropdown"
                     className="navbar__item--link "
+                    to="/Tracking"
                   >
                     {t('NAV_TRACKING')}
-                  </span>
+                  </Link>
                 }
               >
                 {[
@@ -71,9 +72,12 @@ const Navbar = () => {
                     className="dropdown-search-orders"
                   >
                     <div className="search-orders__container">
-                      <p className="search-orders__title">
-                        {t('TRACKING_TITLE')}
-                      </p>
+                      <Link to="/Tracking">
+                        {' '}
+                        <p className="search-orders__title">
+                          {t('TRACKING_TITLE')}
+                        </p>
+                      </Link>
                       <SearchComponet />
                     </div>
                   </div>,
