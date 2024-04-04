@@ -61,6 +61,7 @@
       align-items: center;
       justify-content: center;
     }
+
     &--language {
       cursor: pointer;
       color: red;
@@ -71,7 +72,6 @@
     &--link {
       text-decoration: none;
       color: #555;
-      transition: color 0.2s ease-in-out;
 
       &:hover {
         color: #151515;

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import cookies from 'js-cookie';
 import Home from './views/Home';
 import Tracking from './views/Tracking';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 
 const queryClient = new QueryClient();
@@ -30,6 +30,7 @@ function App() {
   useEffect(() => {
     console.log('Setting page stuff');
     document.body.dir = currentLanguage.dir || 'ltr';
+    document.documentElement.dir = currentLanguage.dir;
     document.title = t('App_TITLE');
   }, [currentLanguage, t]);
 

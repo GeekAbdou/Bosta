@@ -1,23 +1,25 @@
 @import '../../utils/variables';
 
 .dropdown-menu {
-  display: none;
+  visibility: hidden;
   z-index: 2;
   position: absolute;
   left: -16px;
   top: 100%;
-
+  list-style: none;
   width: max-content;
   min-width: 100%;
-
   border-radius: 5px;
   padding: 8px;
-
   background-color: white;
+  opacity: 0;
   box-shadow:
     0 3px 6px -4px rgba(0, 0, 0, 0.12),
     0 6px 16px 0 rgba(0, 0, 0, 0.08),
     0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  transition:
+    opacity 0.5s ease-in-out,
+    visibility 0.5s ease-in-out;
 
   &__item {
     margin: 0;
@@ -62,7 +64,7 @@
     left: $links-spacing/2;
 
     @media screen and (max-width: $media-breakingpoint) {
-      left: - $links-spacing/2;
+      left: -$links-spacing/2;
     }
   }
 }
@@ -79,7 +81,7 @@
     right: $links-spacing/2;
 
     @media screen and (max-width: $media-breakingpoint) {
-      right: - $links-spacing/2;
+      right: -$links-spacing/2;
     }
   }
 }

@@ -20,7 +20,6 @@ const Navbar = () => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
-
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -40,9 +39,13 @@ const Navbar = () => {
         <div className="navbar__section navbar__section--left">
           <div className="navbar__item borderless">
             <Link className="navbar__item--logo" to="/">
-              { ['ar', 'en'].includes(currentLanguageCode) && (
-                <img src={ currentLanguageCode == 'ar' ? ARLogo : ENLogo } alt="Logo" className="navbar__item--img" />
-              ) }
+              {['ar', 'en'].includes(currentLanguageCode) && (
+                <img
+                  src={currentLanguageCode == 'ar' ? ARLogo : ENLogo}
+                  alt="Logo"
+                  className="navbar__item--img"
+                />
+              )}
             </Link>
           </div>
         </div>
@@ -50,17 +53,31 @@ const Navbar = () => {
         <NavigationLinks className="navbar__section navbar__section--center" />
 
         <div className="navbar__section navbar__section--right">
-          <div className='navbar__item--tracking'>
-            <div className="navbar__item borderless">
-              <Dropdown parentElement={ <span key="search-orders__dropdown" className="navbar__item--link ">{ t('NAV_TRACKING') }</span> }>
-                { [
-                  <div key='search-orders__container' className='dropdown-search-orders'>
-                    <div className='search-orders__container'>
-                      <p className='search-orders__title'>{ t('TRACKING_TITLE') }</p>
+          <div className="navbar__item--tracking">
+            <div className="navbar__item">
+              <Dropdown
+                parentElement={
+                  <span
+                    key="search-orders__dropdown"
+                    className="navbar__item--link "
+                  >
+                    {t('NAV_TRACKING')}
+                  </span>
+                }
+              >
+                {[
+                  <div
+                    key="search-orders__container"
+                    className="dropdown-search-orders"
+                  >
+                    <div className="search-orders__container">
+                      <p className="search-orders__title">
+                        {t('TRACKING_TITLE')}
+                      </p>
                       <SearchComponet />
                     </div>
-                  </div>
-                ] }
+                  </div>,
+                ]}
               </Dropdown>
             </div>
           </div>
@@ -70,14 +87,16 @@ const Navbar = () => {
 
         <div className="navbar__mobileSection">
           <HamburgerIcon
-            isOpen={ isOpen }
-            onClick={ toggleMenu }
-            onKeyDown={ handleKeyDown }
+            isOpen={isOpen}
+            onClick={toggleMenu}
+            onKeyDown={handleKeyDown}
           />
-          <div className={ `navbar__mobileSection-links navbar__mobileSection-links${isOpen ? '--open' : ''}` }>
+          <div
+            className={`navbar__mobileSection-links navbar__mobileSection-links${isOpen ? '--open' : ''}`}
+          >
             <NavigationLinks className="navbar__links" />
             <LangNavbarItem />
-            <AuthButtons className="signin-section--mobile"/>
+            <AuthButtons className="signin-section--mobile" />
           </div>
         </div>
       </div>

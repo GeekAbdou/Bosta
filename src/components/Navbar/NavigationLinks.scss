@@ -1,140 +1,136 @@
 @import '../../utils/variables';
 
 [dir='rtl'] {
-    @media screen and (max-width: $media-breakingpoint) {
-        .navbar__item {
-            margin: 0;
-        }
-
-        .navbar__item--tracking .navbar__item {
-            margin-left: $links-spacing;
-        }
-    }
-
+  @media screen and (max-width: $media-breakingpoint) {
     .navbar__item {
-        margin-left: 15px;
-
-        &:hover {
-            .dropdown-menu--icon {
-                transform: translateY(-45%) rotate(90deg);
-            }
-        }
+      margin: 0;
     }
 
-    .navbar__item--link {
-        margin-left: $links-spacing;
-
-        @media screen and (max-width: $media-breakingpoint) {
-            margin: 0;
-        }
+    .navbar__item--tracking .navbar__item {
+      margin-left: $links-spacing;
     }
+  }
+
+  .navbar__item {
+    margin-left: 15px;
+
+    &:hover {
+      .dropdown-menu--icon {
+        transform: translateY(-45%) rotate(90deg);
+      }
+    }
+  }
+
+  .navbar__item--link {
+    margin-left: $links-spacing;
+    transition: all 1s ease;
+
+    @media screen and (max-width: $media-breakingpoint) {
+      margin: 0;
+    }
+  }
 }
 
 [dir='ltr'] {
-    @media screen and (max-width: $media-breakingpoint) {
-        .navbar__item {
-            margin: 0;
-        }
-
-        .navbar__item--tracking .navbar__item {
-            margin-right: $links-spacing;
-        }
-    }
-
+  @media screen and (max-width: $media-breakingpoint) {
     .navbar__item {
-        margin-right: 15px;
-
-        &:hover {
-            .dropdown-menu--icon {
-                transform: translateY(-45%) rotate(-90deg);
-            }
-        }
+      margin: 0;
     }
 
-    .navbar__item--link {
-        margin-right: $links-spacing;
-
-        @media screen and (max-width: $media-breakingpoint) {
-            margin: 0;
-        }
+    .navbar__item--tracking .navbar__item {
+      margin-right: $links-spacing;
     }
+  }
+
+  .navbar__item {
+    margin-right: 15px;
+
+    &:hover {
+      .dropdown-menu--icon {
+        transform: translateY(-45%) rotate(-90deg);
+      }
+    }
+  }
+
+  .navbar__item--link {
+    margin-right: $links-spacing;
+
+    @media screen and (max-width: $media-breakingpoint) {
+      margin: 0;
+    }
+  }
 }
 
 .navbar__item {
-    position: relative;
-    cursor: pointer;
+  position: relative;
+  cursor: pointer;
+  @media screen and (max-width: $media-breakingpoint) {
+    margin-right: 0;
+    margin-left: 0;
+  }
 
-    @media screen and (max-width: $media-breakingpoint) {
-        padding: 23px 0;
-        margin-right: 0;
-        margin-left: 0;
-        border-bottom: 1px dashed #667085;
+  &:hover {
+    .dropdown-menu {
+      visibility: visible;
+      opacity: 1;
+      &--icon {
+        transform: rotate(-90deg) translateX(20%);
+
+        svg path {
+          fill: $red;
+        }
+      }
     }
 
-    &:hover {
-        .dropdown-menu {
-            display: block;
-
-            &--icon {
-                transform: rotate(-90deg) translateX(20%);
-
-                svg path {
-                    fill: $red;
-                }
-            }
-        }
-
-        & .navbar__item--link {
-            color: $red;
-        }
-
-        & .search-orders {
-            display: block !important;
-        }
+    & .navbar__item--link {
+      color: $red;
     }
+
+    & .search-orders {
+      display: block !important;
+    }
+  }
 }
 
 .navbar__item--logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    height: 50px;
+  font-size: 1.5em;
+  font-weight: bold;
+  height: 50px;
 }
 
 .navbar__item--img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-
 .navbar__item--link {
-    text-decoration: none;
-    text-wrap: nowrap;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 700;
-    color: #555;
+  text-decoration: none;
+  text-wrap: nowrap;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #555;
 
-    transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    &:hover {
-        text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .navbar__item--tracking {
-    padding: 21px 28px;
-    border: 1px solid transparent;
+  padding: 21px 28px;
+  border: 1px solid transparent;
 
-    .navbar__item--link {
-        color: $red;
-    }
+  .navbar__item--link {
+    color: $red;
+  }
 
-    svg path {
-        fill: $red;
-    }
+  svg path {
+    fill: $red;
+  }
 }
