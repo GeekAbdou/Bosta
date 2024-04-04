@@ -2,6 +2,7 @@ import React from 'react';
 import './ShipmentDetailsCard.scss';
 import Question from '../assets/question.svg';
 import { t } from 'i18next';
+import Cookies from 'js-cookie';
 
 const TransitDataTable = ({ transitData, BostaData }) => {
   const formatDate = (timestamp) => {
@@ -11,8 +12,6 @@ const TransitDataTable = ({ transitData, BostaData }) => {
     const year = date.getFullYear();
     return `${day}/${month}/${year}`;
   };
-
-  let isRtl = true;
 
   const formatTime = (timestamp) => {
     const date = new Date(timestamp);
@@ -25,15 +24,20 @@ const TransitDataTable = ({ transitData, BostaData }) => {
     return `${formattedHours}:${minutes} ${ampm}`;
   };
 
-  // Add a className based on the isRtl prop to control the text direction
-  const tableClassName = `shipmentDetails__Events__tableContainer__table ${isRtl ? 'rtl' : 'ltr'}`;
+  const currentLanguageCode = Cookies.get('i18next') || 'en';
 
   return (
-    <div className={`shipmentDetails ${isRtl ? 'rtl' : 'ltr'}`}>
+    <div
+      className={`shipmentDetails  ${currentLanguageCode === 'ar' ? 'rtl' : 'ltr'}`}
+    >
       <div className="shipmentDetails__Events">
-        <h3 className="shipmentDetails__Events__title">shipment Details</h3>
+        <span className="shipmentDetails__Events__title">
+          {t('SHIPMENT_DETAILS')}
+        </span>
         <div className="shipmentDetails__Events__tableContainer">
-          <table className={tableClassName}>
+          <table
+            className={`shipmentDetails__Events__tableContainer__table  ${currentLanguageCode === 'ar' ? 'rtl' : 'ltr'}`}
+          >
             <thead>
               <tr>
                 <th>{t('STATE')}</th>
@@ -55,16 +59,21 @@ const TransitDataTable = ({ transitData, BostaData }) => {
           </table>
         </div>
       </div>
-      <div className="shipmentDetails__Address">
-        <h3 className="shipmentDetails__Address__title">Delivery Address</h3>
-        <div className="shipmentDetails__Address__addressDetails">
-          {BostaData.DropOffAddress.firstLine}
-        </div>
-        <div className="shipmentDetails__Address__report">
-          <img src={Question} alt="question mark" />
-          <div>
-            <span>{t('REPORT_TITLE')}</span>
-            <button>{t('REPORT_BUTTON')}</button>
+
+      <div className="shipmentDetails__AddressDetails">
+        <span className="shipmentDetails__AddressDetails__title">
+          {t('DELIVERY_DETAILS')}
+        </span>
+        <div className="shipmentDetails__AddressDetails__container">
+          <div className="shipmentDetails__AddressDetails__container__address">
+            {BostaData.DropOffAddress.firstLine}
+          </div>
+          <div className="shipmentDetails__AddressDetails__container__report">
+            <img src={Question} alt="question mark" />
+            <div>
+              <span>{t('REPORT_TITLE')}</span>
+              <button>{t('REPORT_BUTTON')}</button>
+            </div>
           </div>
         </div>
       </div>

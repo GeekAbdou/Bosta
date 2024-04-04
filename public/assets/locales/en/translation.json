@@ -18,9 +18,12 @@
   "WAITING_FOR_CUSTOMER_ACTION": "Waiting for Customer Action",
   "IN_TRANSIT": "In Transit",
   "DELIVERED_TO_SENDER": "Delivered to Sender",
+  "AVAILABLE_FOR_PICKUP": "Available for Pickup",
 
   "REPORT_TITLE": "Missing Your Shipment ?!",
   "REPORT_BUTTON": "Report a Problem",
+  "SHIPMENT_DETAILS": "Shipment Details",
+  "DELIVERY_DETAILS": "Delivery Details",
 
   "STATE": "State",
   "DATE": "Date",

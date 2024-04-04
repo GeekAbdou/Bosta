@@ -11,16 +11,19 @@
 
   "DELIVERED": "تم التوصيل",
   "TICKET_CREATED": "تم إنشاء الشحنة",
-  "PACKAGE_RECEIVED": "تم استلام الشحنة من التاجر",
+  "PACKAGE_RECEIVED": "تم استلام الشحنة",
   "NOT_YET_SHIPPED": "لم يتم الشحن بعد",
   "OUT_FOR_DELIVERY": "الشحنة خرجت للتوصيل",
   "RECEIVED_DELIVERY_LOCATION": "الشحنة خرجت للتوصيل",
   "WAITING_FOR_CUSTOMER_ACTION": "في انتظار تعليمات العميل",
   "IN_TRANSIT": "في الشحن",
   "DELIVERED_TO_SENDER": "تم ارجاع الشحنة الي التاجر",
+  "AVAILABLE_FOR_PICKUP": "جاهزة للشحن",
 
   "REPORT_TITLE": "هل يوجد مشكلة في شحنتك ؟!",
   "REPORT_BUTTON": "إبلاغ عن مشكلة",
+  "SHIPMENT_DETAILS": "تفاصيل الشحنة",
+  "DELIVERY_DETAILS": "عنوان التسليم",
 
   "STATE": "حالة الشحنة",
   "DATE": "التاريخ",

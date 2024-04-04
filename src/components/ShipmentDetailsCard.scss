@@ -7,15 +7,18 @@
   width: 100%;
   max-width: 856px;
   gap: 16px;
+
   &__Events {
-    flex-grow: 2;
+    flex-grow: 1;
     &__title {
-      padding: 0;
-      margin: 10px 0;
+      margin: 16px 0;
+      display: block;
+      font-size: 16px;
     }
     &__tableContainer {
       border: 1px solid #ddd;
       border-radius: 4px;
+      min-width: 300px;
       &__table {
         width: 100%;
         border-collapse: collapse;
@@ -34,61 +37,68 @@
           td {
             padding: 10px 15px;
             border-bottom: 1px solid #ddd;
+            font-size: 15px;
           }
         }
       }
     }
   }
 
-  &__Address {
-    flex-grow: 1;
-    &__title {
-      padding: 0;
-      margin: 10px 0;
-    }
-    &__addressDetails {
-      display: flex;
-      word-wrap: anywhere;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      padding: 12px;
-      width: 200px;
-      color: #202020;
-      background-color: #fbfbfb;
-    }
-    &__report {
-      display: flex;
-      word-wrap: anywhere;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      padding: 12px;
-      width: 200px;
-      justify-content: space-between;
-      margin: 20px 0;
+  &__AddressDetails {
+    flex-grow: 0;
 
-      & img {
-        margin: 0 0 0 10px;
-        height: 50px;
-        width: 50px;
-      }
-      & div {
+    &__title {
+      margin: 16px 0;
+      display: block;
+      font-size: 16px;
+    }
+
+    &__container {
+      max-width: 250px;
+      display: flex;
+      flex-direction: column;
+      &__address {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        & span {
-          font-weight: bold;
-          font-size: 12px;
-          margin-bottom: 8px;
+        word-wrap: anywhere;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 12px;
+        color: #202020;
+        background-color: #fbfbfb;
+      }
+      &__report {
+        display: flex;
+        word-wrap: anywhere;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 12px;
+        justify-content: space-between;
+        margin: 20px 0;
+
+        & img {
+          margin: 0 0 0 10px;
+          height: 50px;
+          width: 50px;
         }
-        & button {
-          color: white;
-          background-color: #e30613;
-          font-size: 12px;
-          border: none;
-          padding: 8px 18px;
-          border-radius: 12px;
-          cursor: pointer;
+        & div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          & span {
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 8px;
+          }
+          & button {
+            color: white;
+            background-color: #e30613;
+            font-size: 12px;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 12px;
+            cursor: pointer;
+          }
         }
       }
     }
@@ -98,4 +108,70 @@
 .rtl {
   text-align: right;
   direction: rtl;
+}
+
+.ltr {
+  text-align: left;
+  direction: ltr;
+}
+
+@media (max-width: 768px) {
+  .shipmentDetails {
+    flex-direction: column;
+    gap: 16px;
+
+    &__Events {
+      margin: 0 24px;
+      &__tableContainer {
+        &__table {
+          thead {
+            th {
+              padding: 8px;
+              font-size: 14px;
+            }
+          }
+          tbody {
+            td {
+              padding: 8px;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+
+    &__AddressDetails {
+      margin: 0 24px;
+      &__container {
+        max-width: 100%;
+        &__address {
+        }
+        &__report {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .shipmentDetails {
+    &__Events {
+      &__tableContainer {
+        &__table {
+          thead {
+            th {
+              padding: 8px;
+              font-size: 13px;
+            }
+          }
+          tbody {
+            td {
+              padding: 8px;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

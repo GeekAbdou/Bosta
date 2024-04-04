@@ -52,7 +52,7 @@ const ShipmentTracker = () => {
       <Navbar />
       <div className="tracker-input">
         <div
-          className={`tracker-input__group ${currentLanguageCode === 'ar' ? 'ardir' : 'endir'}`}
+          className={`tracker-input__group ${currentLanguageCode === 'ar' ? 'rtl' : 'ltr'}`}
         >
           <input
             placeholder="رقم التتبع"
