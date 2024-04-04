@@ -647,3 +647,560 @@
     }
   }
 }
+
+@media (max-width: 857px) {
+  .rtl {
+    .shipment-card__timeline__created {
+      &--out-for-delivery-icon {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+      &--delivered-icon {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+      &--returned-icon {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+      &--in-transit-icon {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+      &--rescheduled-icon,
+      &--not-shipped-yet {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+    .shipment-card__timeline__delivery {
+      &--out-for-delivery-icon {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+      &--delivered-icon {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+        &::before {
+          width: 0;
+          height: 0;
+        }
+      }
+      &--returned-icon {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+        &::before {
+          width: 0;
+          height: 0;
+        }
+      }
+      &--rescheduled-icon,
+      &--not-shipped-yet {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+  }
+
+  .shipment-card__timeline__created {
+    &--out-for-delivery-icon {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+    }
+    &--delivered-icon {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+    }
+    &--returned-icon {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+    }
+    &--in-transit-icon {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+    }
+    &--rescheduled-icon,
+    &--not-shipped-yet {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+  .shipment-card__timeline__delivery {
+    &--out-for-delivery-icon {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+    }
+    &--delivered-icon {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+      &::before {
+        width: 0;
+        height: 0;
+      }
+    }
+    &--returned-icon {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+      &::before {
+        width: 0;
+        height: 0;
+      }
+    }
+    &--rescheduled-icon,
+    &--not-shipped-yet {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 569px) {
+  .rtl {
+    .shipment-card__timeline__created {
+      &--out-for-delivery-icon {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+      &--delivered-icon {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+      &--returned-icon {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+      &--in-transit-icon {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+      &--rescheduled-icon,
+      &--not-shipped-yet {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+    .shipment-card__timeline__delivery {
+      &--out-for-delivery-icon {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+      &--delivered-icon {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+        &::before {
+          width: 0;
+          height: 0;
+        }
+      }
+      &--returned-icon {
+        &::after {
+          content: '';
+        }
+        &::before {
+          content: '';
+        }
+      }
+      &--rescheduled-icon,
+      &--not-shipped-yet {
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+  }
+
+  .shipment-card__timeline__created {
+    &--out-for-delivery-icon {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+    }
+    &--delivered-icon {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+    }
+    &--returned-icon {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+    }
+    &--in-transit-icon {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+    }
+    &--rescheduled-icon,
+    &--not-shipped-yet {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+  .shipment-card__timeline__delivery {
+    &--out-for-delivery-icon {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+    }
+    &--delivered-icon {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+      &::before {
+        width: 0;
+        height: 0;
+      }
+    }
+    &--returned-icon {
+      &::after {
+        content: '';
+      }
+      &::before {
+        content: '';
+      }
+    }
+    &--rescheduled-icon,
+    &--not-shipped-yet {
+      &::after {
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+
+  .shipment-card__timeline {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0px;
+    padding: 0px;
+    &__created,
+    &__picked,
+    &__delivery,
+    &__delivered {
+      margin: 25px 20px;
+      flex-direction: row;
+    }
+
+    &__created {
+      &--out-for-delivery-icon {
+        padding: 0px;
+        position: relative;
+
+        svg {
+          fill: #e30613;
+          border-radius: 50%;
+        }
+      }
+      &--delivered-icon {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 32px;
+          left: 45%;
+          height: 76px;
+          background-color: #008000;
+          z-index: 0;
+          width: 5px;
+        }
+        svg {
+          fill: #008000;
+          border-radius: 50%;
+        }
+      }
+      &--returned-icon {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 32px;
+          left: 45%;
+          height: 80px;
+          background-color: #e30613;
+          z-index: 0;
+          width: 5px;
+        }
+
+        svg {
+          fill: #e30613;
+          position: relative;
+        }
+      }
+      &--in-transit-icon {
+        padding: 0px;
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 32px;
+          left: 45%;
+          height: 80px;
+          background-color: #e30613;
+          z-index: 0;
+          width: 5px;
+        }
+        svg {
+          fill: #e30613;
+          border-radius: 50%;
+        }
+      }
+      &--rescheduled-icon,
+      &--not-shipped-yet {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 32px;
+          left: 45%;
+          height: 80px;
+          background-color: #f9ba02;
+          z-index: 0;
+          width: 5px;
+        }
+        svg {
+          fill: #f9ba02;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    &__picked {
+      &--preparing-for-shipment-icon {
+        svg {
+          fill: white;
+          border-radius: 50%;
+          background-color: #6c6c6c;
+          padding: 9px;
+          height: 30px;
+          width: 30px;
+        }
+      }
+      &--out-for-delivery-icon {
+        padding: 0px;
+        position: relative;
+        svg {
+          fill: #e30613;
+          border-radius: 50%;
+        }
+      }
+      &--delivered-icon {
+        position: relative;
+        svg {
+          fill: #008000;
+          border-radius: 50%;
+        }
+      }
+      &--returned-icon {
+        position: relative;
+        svg {
+          fill: #e30613;
+          position: relative;
+        }
+      }
+      &--in-transit-icon {
+        padding: 0px;
+        position: relative;
+        svg {
+          fill: white;
+          border-radius: 50%;
+          background-color: #e30613;
+          padding: 9px;
+          height: 30px;
+          width: 30px;
+        }
+      }
+      &--rescheduled-icon,
+      &--not-shipped-yet {
+        padding: 0px;
+        position: relative;
+        svg {
+          fill: #f9ba02;
+        }
+      }
+    }
+
+    &__delivery {
+      &--preparing-for-shipment-icon {
+        svg {
+          fill: white;
+          border-radius: 50%;
+          background-color: #667085;
+          padding: 10px;
+        }
+      }
+      &--out-for-delivery-icon {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 44%;
+          right: 75px;
+          height: 5px;
+          background-color: #e30613;
+          z-index: 0;
+          width: 215px;
+        }
+        svg {
+          fill: white;
+          border-radius: 50%;
+          background-color: #e30613;
+          padding: 10px;
+          position: relative;
+        }
+      }
+      &--delivered-icon {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 32px;
+          left: 45%;
+          height: 78px;
+          background-color: #008000;
+          z-index: 0;
+          width: 5px;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: -63px;
+          left: 45%;
+          height: 81px;
+          background-color: #008000;
+          z-index: 0;
+          width: 5px;
+        }
+        svg {
+          fill: #008000;
+          border-radius: 50%;
+        }
+      }
+      &--returned-icon {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          top: -68px;
+          left: 45%;
+          height: 81px;
+          background-color: #e30613;
+          z-index: 0;
+          width: 5px;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 32px;
+          left: 45%;
+          height: 75px;
+          background-color: #e30613;
+          z-index: 0;
+          width: 5px;
+        }
+        svg {
+          fill: #e30613;
+          position: relative;
+        }
+      }
+      &--rescheduled-icon,
+      &--not-shipped-yet {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          top: -67px;
+          left: 45%;
+          height: 80px;
+          background-color: #f9ba02;
+          z-index: 0;
+          width: 5px;
+        }
+        svg {
+          fill: white;
+          border-radius: 50%;
+          background-color: #f9ba02;
+          padding: 10px;
+          position: relative;
+        }
+      }
+    }
+
+    &__delivered {
+      &--delivered-icon {
+        svg {
+          fill: #008000;
+          border-radius: 50%;
+        }
+      }
+      &--returned-icon {
+        position: relative;
+        svg {
+          fill: white;
+          border-radius: 50%;
+          background-color: #e30613;
+          padding: 10px;
+          position: relative;
+        }
+      }
+    }
+  }
+}

@@ -45,5 +45,6 @@
   "Shipment Created": "Shipment Created",
   "Out For Delivery": "Out For Delivery",
   "Delivered": "Delivered",
-  "Rescheduled": "Rescheduled"
+  "Rescheduled": "Rescheduled",
+  "Preparing For Shipment": "Preparing For Shipment"
 }
