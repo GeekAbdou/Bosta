@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 50px;
   margin-bottom: 20px;
 
   &__group {
@@ -66,5 +66,41 @@
   }
   & button {
     order: 1;
+  }
+}
+
+@media screen and (max-width: 534px) {
+  .tracker-input {
+    margin-top: 20px;
+
+    &__group {
+      width: 80%;
+    }
+  }
+}
+
+.shipment-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.error-wrong-tracking {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color: #e30613;
+  font-size: 20px;
+}
+
+.tracking-container {
+  min-height: calc(100vh - 208px);
+}
+@media screen and (max-width: 534px) {
+  .tracking-container {
+    min-height: calc(100vh - 180px);
   }
 }

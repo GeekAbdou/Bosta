@@ -46,5 +46,6 @@
   "Out For Delivery": "الشحنة خرجت للتسليم",
   "Delivered": "تم التوصيل",
   "Rescheduled": "تم تأجيل التوصيل",
-  "Preparing For Shipment": "جاري تجهيز الشحنة"
+  "Preparing For Shipment": "جاري تجهيز الشحنة",
+  "WRONG_TRACKING_NUMBER": "رقم الشحنة خاطئ برجاء التأكد والمحاولة مرة أخرى"
 }

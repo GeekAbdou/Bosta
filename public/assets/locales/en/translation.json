@@ -46,5 +46,6 @@
   "Out For Delivery": "Out For Delivery",
   "Delivered": "Delivered",
   "Rescheduled": "Rescheduled",
-  "Preparing For Shipment": "Preparing For Shipment"
+  "Preparing For Shipment": "Preparing For Shipment",
+  "WRONG_TRACKING_NUMBER": "Wrong Tracking Number! Please Check Again"
 }

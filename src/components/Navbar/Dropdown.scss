@@ -1,0 +1,91 @@
+@import '../../utils/variables';
+
+.dropdown-menu {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  left: -16px;
+  top: 100%;
+
+  width: max-content;
+  min-width: 100%;
+
+  border-radius: 5px;
+  padding: 8px;
+
+  background-color: white;
+  box-shadow:
+    0 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 6px 16px 0 rgba(0, 0, 0, 0.08),
+    0 9px 28px 8px rgba(0, 0, 0, 0.05);
+
+  &__item {
+    margin: 0;
+    padding: 0px 12px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f5f5f5;
+      text-decoration: underline;
+    }
+
+    a {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+      text-decoration: none;
+      color: #111619;
+    }
+  }
+
+  &--parent {
+    position: relative;
+  }
+
+  &--icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: fit-content;
+
+    svg {
+      width: 10px;
+      height: 6px;
+    }
+  }
+}
+
+[dir='rtl'] .dropdown-menu {
+  left: 0;
+
+  &--icon {
+    left: $links-spacing/2;
+
+    @media screen and (max-width: $media-breakingpoint) {
+      left: - $links-spacing/2;
+    }
+  }
+}
+
+[dir='ltr'] .dropdown-menu {
+  left: -16px;
+
+  @media screen and (max-width: $media-breakingpoint) {
+    left: auto;
+    right: 0;
+  }
+
+  &--icon {
+    right: $links-spacing/2;
+
+    @media screen and (max-width: $media-breakingpoint) {
+      right: - $links-spacing/2;
+    }
+  }
+}
+
+.navbar__mobileSection .dropdown-menu {
+  z-index: 2;
+  width: 100%;
+  left: 0;
+}

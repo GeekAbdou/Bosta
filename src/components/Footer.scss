@@ -1,0 +1,17 @@
+.footer {
+  position: relative; // Normal flow of the document
+  width: 100%;
+  background-color: #ececec;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+  box-shadow: 0 16px 8px rgba(0, 0, 19, 0.1);
+
+  &__content {
+    margin: 0 auto;
+  }
+  &__text {
+    color: #333;
+    font-size: 14px;
+  }
+}

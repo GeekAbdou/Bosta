@@ -2,11 +2,12 @@ import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
-import i18next from './i18n'; // Import the i18next instance from the separate file
+import i18next from './i18n';
+import Loader from './components/Loader';
 
 const loadingMarkup = (
-  <div className="py-4 text-center">
-    <h3>Loading..</h3>
+  <div className="loader-container">
+    <Loader />
   </div>
 );
 

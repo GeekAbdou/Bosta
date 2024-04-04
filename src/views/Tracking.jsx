@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './Tracking.scss';
-import Navbar from '../components/Navbar';
 import ShipmentDetails from '../components/ShipmentDetails';
 import useShipment from '../hooks/useShipment';
 import Cookies from 'js-cookie';
 import { t } from 'i18next';
+import Loader from '../components/Loader';
 
 const ShipmentTracker = () => {
   const [trackingNumber, setTrackingNumber] = useState('');
@@ -49,8 +49,7 @@ const ShipmentTracker = () => {
   }, [BostaShipmentQuery.data]);
 
   return (
-    <>
-      <Navbar />
+    <div className="tracking-container">
       <div className="tracker-input">
         <div
           className={`tracker-input__group ${currentLanguageCode === 'ar' ? 'rtl' : 'ltr'}`}
@@ -94,11 +93,13 @@ const ShipmentTracker = () => {
         </div>
       </div>
 
-      {shipmentQuery.isLoading && <div className="loading">Loading...</div>}
-      {shipmentQuery.isError && (
-        <div className="error">
-          An error occurred: {shipmentQuery.error.message}
+      {shipmentQuery.isLoading && (
+        <div className="shipment-loader-container">
+          <Loader />
         </div>
+      )}
+      {shipmentQuery.isError && (
+        <div className="error-wrong-tracking">{t('WRONG_TRACKING_NUMBER')}</div>
       )}
       {shipmentQuery.data && (
         <ShipmentDetails
@@ -106,7 +107,7 @@ const ShipmentTracker = () => {
           BostaData={BostaShipmentQuery.data}
         />
       )}
-    </>
+    </div>
   );
 };
 

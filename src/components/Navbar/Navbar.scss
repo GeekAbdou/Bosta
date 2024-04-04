@@ -1,0 +1,150 @@
+@import '../../utils/variables';
+
+
+
+
+[dir='ltr'] .navbar__section--right {
+  @media screen and (max-width: 1200px) {
+    margin-left: auto;
+  }
+}
+
+[dir='rtl'] .navbar__section--right {
+  @media screen and (max-width: 1200px) {
+    margin-right: auto;
+  }
+}
+
+.navbar {
+  background-color: #fff;
+  position: relative;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 16px 70px;
+
+    @media screen and (min-width: 1200px) {
+      justify-content: space-between;
+    }
+  }
+
+  &__section {
+    display: flex;
+    align-items: center;
+
+    &--left {
+      order: 1;
+    }
+
+    &--center {
+      order: 2;
+
+      @media screen and (max-width: 1200px) {
+        display: none;
+      }
+    }
+
+    &--right {
+      order: 3;
+
+      @media screen and (max-width: 1200px) {
+        > div {
+          display: none;
+        }
+
+        .navbar__item--tracking {
+          display: block;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $media-breakingpoint) {
+    &__mobileSection {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $media-breakingpoint) {
+    &__container {
+      padding: 16px 24px;
+    }
+
+    &__mobileSection {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      order: 3;
+    }
+
+    &__mobileItem {
+      order: 2;
+
+      &--link {
+        text-decoration: none;
+        color: $red;
+        font-weight: 900;
+        padding: 0 16px;
+      }
+    }
+  }
+}
+
+.navbar__mobileSection {
+  &-links {
+    $padding: 30px;
+    display: none;
+    z-index: 2;
+    flex-direction: column;
+
+    width: 100vw;
+    height: 100vh;
+
+    padding: 0 $padding;
+    background-color: white;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    .navbar__links {
+      flex-direction: column;
+    }
+
+    &--open {
+      display: flex;
+    }
+  }
+
+
+}
+
+.search-orders {
+  &__title {
+    margin: 0;
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #475467;
+  }
+
+  &__container {
+    padding: 18px;
+
+    .tracker-input {
+      margin: 0;
+    }
+  }
+}
+
+.dropdown-search-orders {
+  background-color: white;
+  text-decoration: none;
+
+  &:hover {
+    background-color: white !important;
+    text-decoration: none !important;
+  }
+}
