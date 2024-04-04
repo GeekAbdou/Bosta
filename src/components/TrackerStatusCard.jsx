@@ -71,6 +71,9 @@ const TrackerStatusCard = ({ BostaData }) => {
       return char.toUpperCase();
     });
   }
+  function normalizeString(string) {
+    return string.toLowerCase().split(' ').join('-');
+  }
 
   return (
     <div className="shipment-card">
@@ -79,9 +82,7 @@ const TrackerStatusCard = ({ BostaData }) => {
           <span>
             {t('TRACKING_NUMBER')} #{trackingNumber}
           </span>
-          <div
-            className={`shipment-card__status__${status.toLowerCase().split(' ').join('-')}`}
-          >
+          <div className={`shipment-card__status__${normalizeString(status)}`}>
             {t(capitalizeFirstLetter(status))}
           </div>
         </div>
@@ -102,13 +103,14 @@ const TrackerStatusCard = ({ BostaData }) => {
         </div>
       </div>
 
-      <div className="shipment-card__timeline">
+      <div
+        className={`shipment-card__timeline ${currentLanguageCode === 'ar' ? 'rtl' : 'ltr'}`}
+      >
         <div className="shipment-card__timeline__created">
           <div
-            className={`shipment-card__timeline__created--${status.toLowerCase().split(' ').join('-')}-icon`}
+            className={`shipment-card__timeline__created--${normalizeString(status)}-icon`}
           >
-            {status.toLowerCase().split(' ').join('-') ===
-            'preparing-for-shipment' ? (
+            {normalizeString(status) === 'preparing-for-shipment' ? (
               <Created />
             ) : (
               <RightIcon />
@@ -120,12 +122,11 @@ const TrackerStatusCard = ({ BostaData }) => {
         </div>
         <div className="shipment-card__timeline__picked">
           <div
-            className={`shipment-card__timeline__picked--${status.toLowerCase().split(' ').join('-')}-icon`}
+            className={`shipment-card__timeline__picked--${normalizeString(status)}-icon`}
           >
-            {status.toLowerCase().split(' ').join('-') ===
-            'preparing-for-shipment' ? (
+            {normalizeString(status) === 'preparing-for-shipment' ? (
               <Pickup />
-            ) : status.toLowerCase().split(' ').join('-') === 'in-transit' ? (
+            ) : normalizeString(status) === 'in-transit' ? (
               <Pickup />
             ) : (
               <RightIcon />
@@ -139,11 +140,11 @@ const TrackerStatusCard = ({ BostaData }) => {
         </div>
         <div className="shipment-card__timeline__delivery">
           <div
-            className={`shipment-card__timeline__delivery--${status.toLowerCase().split(' ').join('-')}-icon`}
+            className={`shipment-card__timeline__delivery--${normalizeString(status)}-icon`}
           >
-            {status.toLowerCase().split(' ').join('-') === 'returned' ? (
+            {normalizeString(status) === 'returned' ? (
               <RightIcon />
-            ) : status.toLowerCase().split(' ').join('-') === 'delivered' ? (
+            ) : normalizeString(status) === 'delivered' ? (
               <RightIcon />
             ) : (
               <Delivery />
@@ -156,11 +157,11 @@ const TrackerStatusCard = ({ BostaData }) => {
 
         <div className="shipment-card__timeline__delivered">
           <div
-            className={`shipment-card__timeline__delivered--${status.toLowerCase().split(' ').join('-')}-icon`}
+            className={`shipment-card__timeline__delivered--${normalizeString(status)}-icon`}
           >
-            {status.toLowerCase().split(' ').join('-') === 'returned' ? (
+            {normalizeString(status) === 'returned' ? (
               <RightIcon />
-            ) : status.toLowerCase().split(' ').join('-') === 'delivered' ? (
+            ) : normalizeString(status) === 'delivered' ? (
               <RightIcon />
             ) : (
               <Delivered />

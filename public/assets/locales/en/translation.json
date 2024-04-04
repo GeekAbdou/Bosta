@@ -44,5 +44,6 @@
   "Picked Up": "Picked Up",
   "Shipment Created": "Shipment Created",
   "Out For Delivery": "Out For Delivery",
-  "Delivered": "Delivered"
+  "Delivered": "Delivered",
+  "Rescheduled": "Rescheduled"
 }

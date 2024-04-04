@@ -2,7 +2,7 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   width: 100%;
-  max-width: 856px; // Merged the duplicate max-width property
+  max-width: 856px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -60,7 +60,8 @@
     }
 
     &__waiting-for-customer-action,
-    &__not-shipped-yet {
+    &__not-shipped-yet,
+    &__Rescheduled {
       color: #f9ba02;
     }
   }
@@ -180,6 +181,24 @@
           border-radius: 50%;
         }
       }
+      &--rescheduled-icon,
+      &--not-shipped-yet {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 44%;
+          left: 70px;
+          height: 5px;
+          background-color: #f9ba02;
+          z-index: 0;
+          width: 233px;
+        }
+        svg {
+          fill: #f9ba02;
+          border-radius: 50%;
+        }
+      }
     }
 
     &__picked {
@@ -225,6 +244,14 @@
           padding: 9px;
           height: 30px;
           width: 30px;
+        }
+      }
+      &--rescheduled-icon,
+      &--not-shipped-yet {
+        padding: 0px;
+        position: relative;
+        svg {
+          fill: #f9ba02;
         }
       }
     }
@@ -312,7 +339,29 @@
           position: relative;
         }
       }
+      &--rescheduled-icon,
+      &--not-shipped-yet {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 44%;
+          right: 75px;
+          height: 5px;
+          background-color: #f9ba02;
+          z-index: 0;
+          width: 215px;
+        }
+        svg {
+          fill: white;
+          border-radius: 50%;
+          background-color: #f9ba02;
+          padding: 10px;
+          position: relative;
+        }
+      }
     }
+
     &__delivered {
       &--delivered-icon {
         svg {
@@ -329,6 +378,271 @@
           padding: 10px;
           position: relative;
         }
+      }
+    }
+  }
+}
+
+.rtl {
+  .shipment-card__timeline__created {
+    &--out-for-delivery-icon {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 44%;
+        right: 67px;
+        height: 5px;
+        background-color: #e30613;
+        z-index: 0;
+        width: 220px;
+      }
+      svg {
+        fill: #e30613;
+        border-radius: 50%;
+      }
+    }
+    &--delivered-icon {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 44%;
+        right: 67px;
+        height: 5px;
+        background-color: #008000;
+        z-index: 0;
+        width: 220px;
+      }
+      svg {
+        fill: #008000;
+        border-radius: 50%;
+      }
+    }
+    &--returned-icon {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 44%;
+        right: 67px;
+        height: 5px;
+        background-color: #e30613;
+        z-index: 0;
+        width: 198px;
+      }
+
+      svg {
+        fill: #e30613;
+        position: relative;
+      }
+    }
+    &--in-transit-icon {
+      padding: 0px;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 44%;
+        right: 67px;
+        height: 5px;
+        background-color: #e30613;
+        z-index: 0;
+        width: 238px;
+      }
+      svg {
+        fill: #e30613;
+        border-radius: 50%;
+      }
+    }
+    &--rescheduled-icon,
+    &--not-shipped-yet {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 44%;
+        right: 67px;
+        height: 5px;
+        background-color: #f9ba02;
+        z-index: 0;
+        width: 220px;
+      }
+      svg {
+        fill: #f9ba02;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .shipment-card__timeline__picked {
+    &--preparing-for-shipment-icon {
+      svg {
+        fill: white;
+        border-radius: 50%;
+        background-color: #6c6c6c;
+        padding: 9px;
+        height: 30px;
+        width: 30px;
+      }
+    }
+    &--out-for-delivery-icon {
+      padding: 0px;
+      position: relative;
+      svg {
+        fill: #e30613;
+        border-radius: 50%;
+      }
+    }
+    &--delivered-icon {
+      position: relative;
+      svg {
+        fill: #008000;
+        border-radius: 50%;
+      }
+    }
+    &--returned-icon {
+      position: relative;
+      svg {
+        fill: #e30613;
+        position: relative;
+      }
+    }
+    &--rescheduled-icon,
+    &--not-shipped-yet {
+      padding: 0px;
+      position: relative;
+      svg {
+        fill: #f9ba02;
+      }
+    }
+    &--out-for-delivery-icon {
+      padding: 0px;
+      position: relative;
+      svg {
+        fill: #f9ba02;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .shipment-card__timeline__delivery {
+    &--out-for-delivery-icon {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 44%;
+        right: -174px;
+        height: 5px;
+        background-color: #e30613;
+        z-index: 0;
+        width: 228px;
+      }
+      svg {
+        fill: white;
+        border-radius: 50%;
+        background-color: #e30613;
+        padding: 10px;
+        position: relative;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+      }
+    }
+    &--delivered-icon {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 44%;
+        left: 85px;
+        height: 5px;
+        background-color: #008000;
+        z-index: 0;
+        width: 240px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 44%;
+        right: 85px;
+        height: 5px;
+        background-color: #008000;
+        z-index: 0;
+        width: 219px;
+      }
+      svg {
+        fill: #008000;
+        border-radius: 50%;
+      }
+    }
+    &--returned-icon {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 44%;
+        left: 85px;
+        height: 5px;
+        background-color: #e30613;
+        z-index: 0;
+        width: 216px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 44%;
+        right: 85px;
+        height: 5px;
+        background-color: #e30613;
+        z-index: 0;
+        width: 219px;
+      }
+      svg {
+        fill: #e30613;
+        position: relative;
+      }
+    }
+    &--rescheduled-icon,
+    &--not-shipped-yet {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 44%;
+        right: -174px;
+        height: 5px;
+        background-color: #f9ba02;
+        z-index: 0;
+        width: 228px;
+      }
+      svg {
+        fill: white;
+        border-radius: 50%;
+        background-color: #f9ba02;
+        padding: 10px;
+        position: relative;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+      }
+    }
+  }
+
+  .shipment-card__timeline__delivered {
+    &--delivered-icon {
+      svg {
+        fill: #008000;
+        border-radius: 50%;
+      }
+    }
+    &--returned-icon {
+      position: relative;
+      svg {
+        fill: white;
+        border-radius: 50%;
+        background-color: #e30613;
+        padding: 10px;
+        position: relative;
       }
     }
   }

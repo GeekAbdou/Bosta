@@ -44,5 +44,6 @@
   "Picked Up": "تم استلام الشحنة",
   "Shipment Created": "تم إنشاء الشحنة",
   "Out For Delivery": "الشحنة خرجت للتسليم",
-  "Delivered": "تم التوصيل"
+  "Delivered": "تم التوصيل",
+  "Rescheduled": "تم تأجيل التوصيل"
 }
