@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import ShipmentDetails from '../components/ShipmentDetails';
 import useShipment from '../hooks/useShipment';
 import Cookies from 'js-cookie';
+import { t } from 'i18next';
 
 const ShipmentTracker = () => {
   const [trackingNumber, setTrackingNumber] = useState('');
@@ -55,7 +56,7 @@ const ShipmentTracker = () => {
           className={`tracker-input__group ${currentLanguageCode === 'ar' ? 'rtl' : 'ltr'}`}
         >
           <input
-            placeholder="رقم التتبع"
+            placeholder={t('TRACKING_NUMBER')}
             className="tracker-input__input"
             type="text"
             value={trackingNumber}

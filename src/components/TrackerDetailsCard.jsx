@@ -1,10 +1,10 @@
 import React from 'react';
-import './ShipmentDetailsCard.scss';
+import './TrackerDetailsCard.scss';
 import Question from '../assets/question.svg';
 import { t } from 'i18next';
 import Cookies from 'js-cookie';
 
-const TransitDataTable = ({ transitData, BostaData }) => {
+const TrackerDetailsCard = ({ transitData, BostaData }) => {
   const formatDate = (timestamp) => {
     const date = new Date(timestamp);
     const day = date.getDate().toString().padStart(2, '0');
@@ -81,4 +81,4 @@ const TransitDataTable = ({ transitData, BostaData }) => {
   );
 };
 
-export default TransitDataTable;
+export default TrackerDetailsCard;

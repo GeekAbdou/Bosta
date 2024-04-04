@@ -19,6 +19,7 @@
   "IN_TRANSIT": "In Transit",
   "DELIVERED_TO_SENDER": "Delivered to Sender",
   "AVAILABLE_FOR_PICKUP": "Available for Pickup",
+  "CANCELLED": "Cancelled",
 
   "REPORT_TITLE": "Missing Your Shipment ?!",
   "REPORT_BUTTON": "Report a Problem",
@@ -28,5 +29,20 @@
   "STATE": "State",
   "DATE": "Date",
   "TIME": "Time",
-  "HUB": "Hub"
+  "HUB": "Hub",
+
+  "TRACKING_NUMBER": "Tracking number",
+  "LAST_UPDATE": "Last Update",
+  "PROVIDER": "Provider",
+  "DELIVERY_DATE": "Delivery In",
+  "AT": "at",
+
+  "Bosta": "Bosta",
+  "Returned": "Returned",
+  "Cancelled": "Cancelled",
+  "In Transit": "In Transit",
+  "Picked Up": "Picked Up",
+  "Shipment Created": "Shipment Created",
+  "Out For Delivery": "Out For Delivery",
+  "Delivered": "Delivered"
 }

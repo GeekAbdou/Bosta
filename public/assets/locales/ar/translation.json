@@ -19,6 +19,7 @@
   "IN_TRANSIT": "في الشحن",
   "DELIVERED_TO_SENDER": "تم ارجاع الشحنة الي التاجر",
   "AVAILABLE_FOR_PICKUP": "جاهزة للشحن",
+  "CANCELLED": "تم الغاء الشحنة",
 
   "REPORT_TITLE": "هل يوجد مشكلة في شحنتك ؟!",
   "REPORT_BUTTON": "إبلاغ عن مشكلة",
@@ -28,5 +29,20 @@
   "STATE": "حالة الشحنة",
   "DATE": "التاريخ",
   "TIME": "الوقت",
-  "HUB": "الفرع"
+  "HUB": "الفرع",
+
+  "TRACKING_NUMBER": "رقم الشحنة",
+  "LAST_UPDATE": "آخر تحديث",
+  "PROVIDER": "التاجر",
+  "DELIVERY_DATE": "موعد التوصيل خلال",
+  "AT": "في",
+
+  "Bosta": "بوسطة",
+  "Returned": "تم ارجاع الشحنة للتاجر",
+  "Cancelled": "تم الغاء الشحنة",
+  "In Transit": "تم استلام الشحنة",
+  "Picked Up": "تم استلام الشحنة",
+  "Shipment Created": "تم إنشاء الشحنة",
+  "Out For Delivery": "الشحنة خرجت للتسليم",
+  "Delivered": "تم التوصيل"
 }
