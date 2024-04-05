@@ -1,6 +1,4 @@
 import { t } from 'i18next';
-import Cookies from 'js-cookie';
-const currentLanguageCode = Cookies.get('i18next') || 'en';
 
 const formatDateTime = (inputDate) => {
   const date = new Date(inputDate);
@@ -49,34 +47,16 @@ const formatDateMonth = (inputDate) => {
     // loose equality to check null
     return 'Cancelled';
   }
+
   const date = new Date(inputDate);
   const day = ('0' + date.getDate()).slice(-2);
-  const monthIndex = date.getMonth();
   const year = date.getFullYear();
 
-  let formattedMonth;
-  if (currentLanguageCode === 'ar') {
-    const arabicMonths = [
-      'يناير',
-      'فبراير',
-      'مارس',
-      'أبريل',
-      'مايو',
-      'يونيو',
-      'يوليو',
-      'أغسطس',
-      'سبتمبر',
-      'أكتوبر',
-      'نوفمبر',
-      'ديسمبر',
-    ];
-    formattedMonth = arabicMonths[monthIndex];
-  } else {
-    const options = { month: 'short' };
-    formattedMonth = date.toLocaleDateString('en-GB', options);
-  }
+  const options = { month: 'short' }; // Define options before using
 
-  return `${day} ${formattedMonth} ${year}`;
+  let formattedMonth = date.toLocaleDateString('en-GB', options); // Use options in toLocaleDateString
+
+  return `${day} ${t(formattedMonth)} ${year}`;
 };
 
 export {

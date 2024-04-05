@@ -91,3 +91,9 @@
   width: 100%;
   left: 0;
 }
+
+@media screen and (max-width: 500px) {
+  .dropdown-menu {
+    min-width: 100%;
+  }
+}

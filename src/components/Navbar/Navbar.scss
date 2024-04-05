@@ -94,7 +94,7 @@
   display: none;
   z-index: 2;
   flex-direction: column;
-  width: 100vw;
+  width: 89vw;
 
   padding: 0 $padding;
   background-color: white;
@@ -106,7 +106,6 @@
 
   .navbar__links {
     list-style: none;
-    padding: 0px 80px;
     flex-direction: column;
   }
 
