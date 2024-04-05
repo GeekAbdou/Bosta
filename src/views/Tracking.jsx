@@ -5,10 +5,15 @@ import useShipment from '../hooks/useShipment';
 import Cookies from 'js-cookie';
 import { t } from 'i18next';
 import Loader from '../components/Loader';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const ShipmentTracker = () => {
-  const [trackingNumber, setTrackingNumber] = useState('');
-  const [queryId, setQueryId] = useState('');
+  const searchParams = new URLSearchParams(useLocation().search);
+  const shipmentNumber = searchParams.get('shipment-number');
+  const navigate = useNavigate();
+
+  const [trackingNumber, setTrackingNumber] = useState(shipmentNumber || '');
+  const [queryId, setQueryId] = useState(shipmentNumber || '');
 
   const shipmentQuery = useShipment(queryId);
   const BostaShipmentQuery = useShipment(queryId, true);
@@ -27,6 +32,8 @@ const ShipmentTracker = () => {
 
   const handleSearchClick = () => {
     setQueryId(trackingNumber);
+    // Redirect to the desired URL with the shipment number as query parameter
+    navigate(`/Tracking/?shipment-number=${trackingNumber}`);
   };
 
   const handleKeyDown = (event) => {

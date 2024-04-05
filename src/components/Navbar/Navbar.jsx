@@ -6,8 +6,7 @@ import React, { useState } from 'react';
 import './Navbar.scss';
 import ARLogo from '../../assets/ar-logo.svg';
 import ENLogo from '../../assets/en-logo.svg';
-
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import cookies from 'js-cookie';
 import NavigationLinks from './NavigationLinks';
@@ -30,7 +29,14 @@ const Navbar = () => {
       toggleMenu();
     }
   };
+  // eslint-disable-next-line no-unused-vars
+  const [trackingNumber, setTrackingNumber] = useState('');
+  const navigate = useNavigate();
 
+  const handleTrackingNumberChange = (selectedTrackingNumber) => {
+    setTrackingNumber(selectedTrackingNumber);
+    navigate(`/tracking/${selectedTrackingNumber}`); // Assuming '/tracking/:number' is your route
+  };
   const currentLanguageCode = cookies.get('i18next') || 'en';
 
   return (
@@ -56,6 +62,7 @@ const Navbar = () => {
           <div className="navbar__item--tracking">
             <div className="navbar__item">
               <Dropdown
+                onSelection={handleTrackingNumberChange}
                 parentElement={
                   <Link
                     key="search-orders__dropdown"

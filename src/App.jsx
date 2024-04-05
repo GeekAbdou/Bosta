@@ -40,7 +40,12 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Tracking" element={<Tracking />} />
+          <Route path="/tracking" sensitive={false} element={<Tracking />} />
+          <Route
+            path="/tracking/:trackingNumber"
+            sensitive={false}
+            element={<Tracking />}
+          />
         </Routes>
       </QueryClientProvider>
       <Footer />

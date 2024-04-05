@@ -6,6 +6,12 @@ import { ReactComponent as Created } from '../assets/order-created.svg';
 import { ReactComponent as Pickup } from '../assets/order-pickup.svg';
 import { ReactComponent as Delivery } from '../assets/order-delivery.svg';
 import { ReactComponent as Delivered } from '../assets/order-delivered.svg';
+import {
+  formatDateTime,
+  capitalizeFirstLetter,
+  normalizeString,
+  formatDateMonth,
+} from '../utils/utilsfn';
 
 const TrackerStatusCard = ({ BostaData }) => {
   const trackingNumber = BostaData.TrackingNumber;
@@ -15,65 +21,7 @@ const TrackerStatusCard = ({ BostaData }) => {
   const status = BostaData.CurrentStatus.state;
   const currentLanguageCode = Cookies.get('i18next') || 'en';
 
-  const formatDateMonth = (inputDate) => {
-    if (inputDate == null) {
-      // loose equality to check null
-      return 'Cancelled';
-    }
-    const date = new Date(inputDate);
-    const day = ('0' + date.getDate()).slice(-2); // Add leading zero if needed
-    const monthIndex = date.getMonth();
-    const year = date.getFullYear();
-
-    let formattedMonth;
-    if (currentLanguageCode === 'ar') {
-      const arabicMonths = [
-        'يناير',
-        'فبراير',
-        'مارس',
-        'أبريل',
-        'مايو',
-        'يونيو',
-        'يوليو',
-        'أغسطس',
-        'سبتمبر',
-        'أكتوبر',
-        'نوفمبر',
-        'ديسمبر',
-      ];
-      formattedMonth = arabicMonths[monthIndex];
-    } else {
-      const options = { month: 'short' };
-      formattedMonth = date.toLocaleDateString('en-GB', options);
-    }
-
-    return `${day} ${formattedMonth} ${year}`;
-  };
-
-  const formatDateTime = (inputDate) => {
-    const date = new Date(inputDate);
-    const options = {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-    };
-    const formattedDate = date.toLocaleDateString('en-GB', options);
-    const formattedTime = date.toLocaleTimeString('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true,
-    });
-    return `${formattedDate} ${t('AT')} ${formattedTime}`;
-  };
-
-  function capitalizeFirstLetter(string) {
-    return string.replace(/\b\w/g, function (char) {
-      return char.toUpperCase();
-    });
-  }
-  function normalizeString(string) {
-    return string.toLowerCase().split(' ').join('-');
-  }
+  // TODO: formatDateTime , formatDateMonth ,formatDateMonth capitalizeFirstLetter improved with useMemo
 
   return (
     <div className="shipment-card">
@@ -106,6 +54,9 @@ const TrackerStatusCard = ({ BostaData }) => {
       <div
         className={`shipment-card__timeline ${currentLanguageCode === 'ar' ? 'rtl' : 'ltr'}`}
       >
+        {
+          // TODO: cleaning jsx by removing logic outside the layout
+        }
         <div className="shipment-card__timeline__created">
           <div
             className={`shipment-card__timeline__created--${normalizeString(status)}-icon`}
@@ -154,7 +105,6 @@ const TrackerStatusCard = ({ BostaData }) => {
             {t('Out For Delivery')}
           </div>
         </div>
-
         <div className="shipment-card__timeline__delivered">
           <div
             className={`shipment-card__timeline__delivered--${normalizeString(status)}-icon`}

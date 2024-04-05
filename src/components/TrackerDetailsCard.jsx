@@ -1,59 +1,63 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import './TrackerDetailsCard.scss';
 import Question from '../assets/question.svg';
 import { t } from 'i18next';
 import Cookies from 'js-cookie';
+import { formatDate, formatTime } from '../utils/utilsfn';
 
+const TableRow = ({ event }) => (
+  <tr>
+    <td> {t(event.hub) ? t(event.hub) : 'N/A'}</td>
+    <td>{formatDate(event.timestamp)}</td>
+    <td>{formatTime(event.timestamp)}</td>
+    <td>{t(event.state)}</td>
+  </tr>
+);
 const TrackerDetailsCard = ({ transitData, BostaData }) => {
-  const formatDate = (timestamp) => {
-    const date = new Date(timestamp);
-    const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-  };
-
-  const formatTime = (timestamp) => {
-    const date = new Date(timestamp);
-    const hours = date.getHours();
-    const minutes = date.getMinutes().toString().padStart(2, '0');
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-    const formattedHours = (((hours + 11) % 12) + 1)
-      .toString()
-      .padStart(2, '0');
-    return `${formattedHours}:${minutes} ${ampm}`;
-  };
-
   const currentLanguageCode = Cookies.get('i18next') || 'en';
+  const directionClass = useMemo(
+    () => (currentLanguageCode === 'ar' ? 'rtl' : 'ltr'),
+    [currentLanguageCode],
+  );
+
+  if (!transitData || !BostaData) {
+    return <div>{t('ERROR_MESSAGE')}</div>;
+  }
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const processedTransitData = useMemo(() => {
+    let lastValidHub = t('Shipment Created');
+    return (transitData || []).map((event) => {
+      if (event.hub) {
+        lastValidHub = event.hub;
+      } else {
+        event = { ...event, hub: lastValidHub };
+      }
+      return event;
+    });
+  }, [transitData]);
 
   return (
-    <div
-      className={`shipmentDetails  ${currentLanguageCode === 'ar' ? 'rtl' : 'ltr'}`}
-    >
+    <div className={`shipmentDetails ${directionClass}`}>
       <div className="shipmentDetails__Events">
         <span className="shipmentDetails__Events__title">
           {t('SHIPMENT_DETAILS')}
         </span>
         <div className="shipmentDetails__Events__tableContainer">
           <table
-            className={`shipmentDetails__Events__tableContainer__table  ${currentLanguageCode === 'ar' ? 'rtl' : 'ltr'}`}
+            className={`shipmentDetails__Events__tableContainer__table ${directionClass}`}
           >
             <thead>
               <tr>
-                <th>{t('STATE')}</th>
+                <th>{t('HUB')}</th>
                 <th>{t('DATE')}</th>
                 <th>{t('TIME')}</th>
-                <th>{t('HUB')}</th>
+                <th>{t('STATE')}</th>
               </tr>
             </thead>
             <tbody>
-              {transitData.map((event, index) => (
-                <tr key={index}>
-                  <td>{t(event.state)}</td>
-                  <td>{formatDate(event.timestamp)}</td>
-                  <td>{formatTime(event.timestamp)}</td>
-                  <td>{event.hub || 'N/A'}</td>
-                </tr>
+              {processedTransitData.map((event, index) => (
+                <TableRow key={index} event={event} />
               ))}
             </tbody>
           </table>

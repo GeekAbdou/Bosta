@@ -5,15 +5,12 @@ import TrackerDetailsCard from './TrackerDetailsCard';
 import ThreeCirclesSpinner from './ThreeCirclesSpinner';
 
 const ShipmentDetails = ({ shipmentData, BostaData }) => {
-  if (!shipmentData || !shipmentData.TransitEvents) {
-    return (
-      <div className="shipment-loader-container">
-        <ThreeCirclesSpinner />
-      </div>
-    );
-  }
+  const hasValidData =
+    shipmentData?.TransitEvents &&
+    BostaData?.CurrentStatus &&
+    BostaData?.TransitEvents;
 
-  if (!BostaData || !BostaData.CurrentStatus || !BostaData.TransitEvents) {
+  if (!hasValidData) {
     return (
       <div className="shipment-loader-container">
         <ThreeCirclesSpinner />
