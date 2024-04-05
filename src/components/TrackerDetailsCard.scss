@@ -71,14 +71,15 @@
         word-wrap: anywhere;
         border: 1px solid #ddd;
         border-radius: 4px;
-        padding: 12px;
+        padding: 8px;
         justify-content: space-between;
         margin: 20px 0;
+        align-items: center;
 
         & img {
           margin: 0 0 0 10px;
-          height: 50px;
-          width: 50px;
+          height: 60px;
+          width: 60px;
         }
         & div {
           display: flex;
@@ -147,6 +148,7 @@
         &__address {
         }
         &__report {
+          align-items: center;
         }
       }
     }

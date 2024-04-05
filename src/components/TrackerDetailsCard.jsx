@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import './TrackerDetailsCard.scss';
-import Question from '../assets/question.svg';
+import Report from '../assets/report.webp';
 import { t } from 'i18next';
 import Cookies from 'js-cookie';
 import { formatDate, formatTime } from '../utils/utilsfn';
@@ -73,7 +73,7 @@ const TrackerDetailsCard = ({ transitData, BostaData }) => {
             {BostaData.DropOffAddress.firstLine}
           </div>
           <div className="shipmentDetails__AddressDetails__container__report">
-            <img src={Question} alt="question mark" />
+            <img src={Report} alt="question mark" />
             <div>
               <span>{t('REPORT_TITLE')}</span>
               <button>{t('REPORT_BUTTON')}</button>

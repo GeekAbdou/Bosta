@@ -149,5 +149,10 @@
   "Sep": "سبتمبر",
   "Oct": "أكتوبر",
   "Nov": "نوفمبر",
-  "Dec": "ديسمبر"
+  "Dec": "ديسمبر",
+
+  "FOOTER_COPYRIGHTS": " حقوق النشر 2024© بوسطة",
+  "FOOTER_TITLE": "الشحنات",
+  "FOOTER_TRACKING": "تتبع شحنتك",
+  "FOOTER_PRICES": "الأسعار"
 }

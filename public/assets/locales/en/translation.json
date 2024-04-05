@@ -149,5 +149,10 @@
   "Sep": "Sep",
   "Oct": "Oct",
   "Nov": "Nov",
-  "Dec": "Dec"
+  "Dec": "Dec",
+
+  "FOOTER_COPYRIGHTS": "Copyright ©2024 bosta.co",
+  "FOOTER_TRACKING": "Track Shipment",
+  "FOOTER_PRICES": "Prices",
+  "FOOTER_TITLE": "Shipments"
 }
