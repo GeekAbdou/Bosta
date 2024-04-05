@@ -40,74 +40,75 @@ const Navbar = () => {
   const currentLanguageCode = cookies.get('i18next') || 'en';
 
   return (
-    <nav className="navbar">
-      <div className="navbar__container">
-        <div className="navbar__section navbar__section--left">
-          <div className="navbar__item borderless">
-            <Link className="navbar__item--logo" to="/">
-              {['ar', 'en'].includes(currentLanguageCode) && (
-                <img
-                  src={currentLanguageCode == 'ar' ? ARLogo : ENLogo}
-                  alt="Logo"
-                  className="navbar__item--img"
-                />
-              )}
-            </Link>
-          </div>
-        </div>
-
-        <NavigationLinks className="navbar__section navbar__section--center" />
-
-        <div className="navbar__section navbar__section--right">
-          <div className="navbar__item--tracking">
-            <div className="navbar__item">
-              <Dropdown
-                onSelection={handleTrackingNumberChange}
-                parentElement={
-                  <p
-                    key="search-orders__dropdown"
-                    className="navbar__item--link "
-                  >
-                    {t('NAV_TRACKING')}
-                  </p>
-                }
-              >
-                {[
-                  <div
-                    key="search-orders__container"
-                    className="dropdown-search-orders"
-                  >
-                    <div className="search-orders__container">
-                      <p className="search-orders__title">
-                        {t('TRACKING_TITLE')}
-                      </p>
-                      <SearchComponet />
-                    </div>
-                  </div>,
-                ]}
-              </Dropdown>
+    <header >
+      <nav className="navbar">
+        <div className="navbar__container">
+          <div className="navbar__section navbar__section--left">
+            <div className="navbar__item borderless">
+              <Link className="navbar__item--logo" to="/">
+                { ['ar', 'en'].includes(currentLanguageCode) && (
+                  <img
+                    src={ currentLanguageCode == 'ar' ? ARLogo : ENLogo }
+                    alt="Logo"
+                    className="navbar__item--img"
+                  />
+                ) }
+              </Link>
             </div>
           </div>
-          <LangNavbarItem />
-          <AuthButtons />
-        </div>
 
-        <div className="navbar__mobileSection">
-          <HamburgerIcon
-            isOpen={isOpen}
-            onClick={toggleMenu}
-            onKeyDown={handleKeyDown}
-          />
-          <div
-            className={`navbar__mobileSection-links navbar__mobileSection-links${isOpen ? '--open' : ''}`}
-          >
-            <NavigationLinks className="navbar__links" />
+          <NavigationLinks className="navbar__section navbar__section--center" />
+
+          <div className="navbar__section navbar__section--right">
+            <div className="navbar__item--tracking">
+              <div className="navbar__item borderless">
+                <Dropdown
+                  onSelection={ handleTrackingNumberChange }
+                  parentElement={
+                    <p
+                      key="search-orders__dropdown"
+                      className="navbar__item--link "
+                    >
+                      { t('NAV_TRACKING') }
+                    </p>
+                  }
+                >
+                  { [
+                    <div
+                      key="search-orders__container"
+                      className="dropdown-search-orders"
+                    >
+                      <div className="search-orders__container">
+                        <p className="search-orders__title">
+                          { t('TRACKING_TITLE') }
+                        </p>
+                        <SearchComponet />
+                      </div>
+                    </div>,
+                  ] }
+                </Dropdown>
+              </div>
+            </div>
             <LangNavbarItem />
-            <AuthButtons className="signin-section--mobile" />
+            <AuthButtons />
           </div>
+          <HamburgerIcon
+            isOpen={ isOpen }
+            onClick={ toggleMenu }
+            onKeyDown={ handleKeyDown }
+          />
+        </div>
+      </nav>
+      <div className="navbar__mobileSection">
+        <div
+          className={ `navbar__mobileSection-links navbar__mobileSection-links${isOpen ? '--open' : ''}` }
+        >
+          <NavigationLinks className="navbar__links" />
+          <LangNavbarItem />
+          <AuthButtons className="signin-section--mobile" />
         </div>
       </div>
-    </nav>
+    </header >
   );
 };
 

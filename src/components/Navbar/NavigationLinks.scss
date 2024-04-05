@@ -64,15 +64,19 @@
 .navbar__item {
   position: relative;
   cursor: pointer;
+
   @media screen and (max-width: $media-breakingpoint) {
+    padding: 23px 0;
     margin-right: 0;
     margin-left: 0;
+    border-bottom: 1px dashed #667085;
   }
 
   &:hover {
     .dropdown-menu {
       visibility: visible;
       opacity: 1;
+
       &--icon {
         transform: rotate(-90deg) translateX(20%);
 

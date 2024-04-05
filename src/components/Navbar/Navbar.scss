@@ -14,17 +14,26 @@
 
 .navbar {
   background-color: #fff;
+  width: 100%;
 
   &__container {
-    max-width: 2000px;
+    width: 90%;
     display: flex;
     align-items: center;
-    padding: 16px 70px;
+    padding: 0;
     margin: 0 auto;
 
     @media screen and (min-width: 1300px) {
       justify-content: space-between;
+      padding: 0;
+      margin: 0 auto;
     }
+  }
+
+  &__mobileSection {
+    position: absolute;
+    left: 0;
+    width: 100%;
   }
 
   &__section {
@@ -46,6 +55,7 @@
 
     &--right {
       order: 3;
+
       @media screen and (max-width: 1300px) {
         > div {
           display: none;
@@ -62,17 +72,24 @@
     &__mobileSection {
       display: none;
     }
+
+    &__hamburger {
+      display: none;
+    }
   }
 
   @media screen and (max-width: $media-breakingpoint) {
     &__container {
-      padding: 16px 24px;
+      padding: 0px 20px;
     }
 
     &__mobileSection {
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+
+    &__hamburger {
       order: 3;
     }
 
@@ -94,15 +111,12 @@
   display: none;
   z-index: 2;
   flex-direction: column;
-  width: 89vw;
+
+  width: 100vw;
+  height: calc(100vh - 100%);
 
   padding: 0 $padding;
   background-color: white;
-  border: 1px solid #e5e5e5;
-  position: absolute;
-  top: 9%;
-  left: 0;
-  border-radius: 4px;
 
   .navbar__links {
     list-style: none;
