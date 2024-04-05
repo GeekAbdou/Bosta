@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 import i18next from './i18n';
-import Loader from './components/Loader';
+import Loader from './components/Layout/Loader';
 
 const loadingMarkup = (
   <div className="loader-container">

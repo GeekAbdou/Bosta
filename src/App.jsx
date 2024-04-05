@@ -5,8 +5,8 @@ import { useTranslation } from 'react-i18next';
 import cookies from 'js-cookie';
 import Home from './views/Home';
 import Tracking from './views/Tracking';
-import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer';
+import Navbar from './components/Layout/Navbar/Navbar';
+import Footer from './components/Layout/Footer';
 
 const queryClient = new QueryClient();
 

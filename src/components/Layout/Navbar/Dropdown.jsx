@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { ReactComponent as ChivronIcon } from '../../assets/chivron.svg';
+import { ReactComponent as ChivronIcon } from '../../../assets/chivron.svg';
 import './Dropdown.scss';
 
 const Dropdown = ({ parentElement, children }) => {

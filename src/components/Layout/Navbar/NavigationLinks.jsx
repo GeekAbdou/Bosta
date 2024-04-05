@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import navLinks from "../../utils/navLinks";
+import navLinks from "../../../utils/navLinks";
 import Dropdown from "./Dropdown";
 import "./NavigationLinks.scss";
 

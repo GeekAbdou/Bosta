@@ -4,8 +4,8 @@
 
 import React, { useState } from 'react';
 import './Navbar.scss';
-import ARLogo from '../../assets/ar-logo.svg';
-import ENLogo from '../../assets/en-logo.svg';
+import ARLogo from '../../../assets/ar-logo.svg';
+import ENLogo from '../../../assets/en-logo.svg';
 import { useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import cookies from 'js-cookie';
@@ -15,6 +15,7 @@ import Dropdown from './Dropdown';
 import AuthButtons from './AuthButtons';
 import LangNavbarItem from './LangNavbarItem';
 import HamburgerIcon from './HamburgerIcon';
+
 const Navbar = () => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);

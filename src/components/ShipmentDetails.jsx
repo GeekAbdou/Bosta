@@ -2,7 +2,7 @@ import React from 'react';
 import './ShipmentDetails.scss';
 import TrackerStatusCard from './TrackerStatusCard';
 import TrackerDetailsCard from './TrackerDetailsCard';
-import ThreeCirclesSpinner from './ThreeCirclesSpinner';
+import ThreeCirclesSpinner from './Layout/ThreeCirclesSpinner';
 
 const ShipmentDetails = ({ shipmentData, BostaData }) => {
   const hasValidData =

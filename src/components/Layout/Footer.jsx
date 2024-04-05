@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import ARLogo from '../assets/ar-logo.svg';
-import ENLogo from '../assets/en-logo.svg';
-import facebook from '../assets/facebook.svg';
-import twitter from '../assets/twitter.svg';
+import ARLogo from '../../assets/ar-logo.svg';
+import ENLogo from '../../assets/en-logo.svg';
+import facebook from '../../assets/facebook.svg';
+import twitter from '../../assets/twitter.svg';
 import './Footer.scss';
 
 const Footer = () => {

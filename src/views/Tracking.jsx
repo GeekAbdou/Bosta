@@ -4,7 +4,7 @@ import ShipmentDetails from '../components/ShipmentDetails';
 import useShipment from '../hooks/useShipment';
 import Cookies from 'js-cookie';
 import { t } from 'i18next';
-import Loader from '../components/Loader';
+import Loader from '../components/Layout/Loader';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const ShipmentTracker = () => {
@@ -32,13 +32,11 @@ const ShipmentTracker = () => {
 
   const handleSearchClick = () => {
     setQueryId(trackingNumber);
-    // Redirect to the desired URL with the shipment number as query parameter
     navigate(`/Tracking/?shipment-number=${trackingNumber}`);
   };
 
   const handleKeyDown = (event) => {
     if (event.keyCode === 13) {
-      // 13 key is Enter
       handleSearchClick();
     }
   };

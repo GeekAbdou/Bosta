@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 //import { ReactComponent as MagnifierIcon } from '../../assets/magnifier.svg';
-import '../../views/Tracking.scss';
+import '../../../views/Tracking.scss';
 import { t } from 'i18next';
 import { useNavigate, useLocation } from 'react-router-dom';
 
