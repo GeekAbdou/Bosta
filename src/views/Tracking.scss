@@ -1,9 +1,12 @@
 .tracker-input {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
   margin-top: 50px;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 534px) {
+    width: 120%;
+  }
 
   &__group {
     display: flex;
