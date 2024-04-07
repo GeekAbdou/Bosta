@@ -22,15 +22,16 @@
   }
 
   &__input {
+    box-sizing: border-box;
     color: #8f8f8f;
     border-radius: 5px;
     font-size: 14px;
     border-radius: 0 10px 10px 0;
     border: 1px solid #e4e7ec;
-    padding: 20px;
     width: 100%;
     font-family: 'Cairo', sans-serif;
     border: 2px solid #fff;
+    height: 100%;
 
     &::placeholder {
       color: #98a2b3;
@@ -49,7 +50,7 @@
     border-radius: 10px 0 0 10px;
     border: none;
     width: 50px;
-    height: 70px;
+    height: 50px;
     cursor: pointer;
   }
 }
@@ -75,10 +76,6 @@
 @media screen and (max-width: 534px) {
   .tracker-input {
     margin-top: 20px;
-
-    &__group {
-      width: 80%;
-    }
   }
 }
 

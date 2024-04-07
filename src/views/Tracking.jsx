@@ -26,6 +26,12 @@ const ShipmentTracker = () => {
     }
   }, [queryId]);
 
+  useEffect(() => {
+    const newShipmentNumber = searchParams.get('shipment-number');
+    setTrackingNumber(newShipmentNumber || '');
+    setQueryId(newShipmentNumber || '');
+  }, [searchParams]);
+
   const handleInputChange = (event) => {
     setTrackingNumber(event.target.value);
   };

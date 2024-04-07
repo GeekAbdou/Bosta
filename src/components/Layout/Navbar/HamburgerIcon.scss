@@ -9,6 +9,7 @@
     align-items: center;
     cursor: pointer;
     order: 3;
+    flex-shrink: 0;
 
     &--open span {
       &:nth-child(1) {

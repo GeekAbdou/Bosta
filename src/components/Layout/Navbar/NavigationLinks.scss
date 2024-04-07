@@ -130,6 +130,9 @@
   padding: 21px 28px;
   border: 1px solid transparent;
 
+  @media screen and (max-width: 534px) {
+    padding: 18px 0;
+  }
   .navbar__item--link {
     color: $red;
   }

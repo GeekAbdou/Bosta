@@ -39,6 +39,10 @@
     padding: 13px 32px;
     border-radius: 50px;
     width: min(300px, 100%);
+
+    @media screen and (max-width: 534px) {
+      width: min(200px, 100%);
+    }
   }
 
   .signup-btn {
