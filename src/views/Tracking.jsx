@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './Tracking.scss';
 import ShipmentDetails from '../components/ShipmentDetails';
 import useShipment from '../hooks/useShipment';
 import Cookies from 'js-cookie';
 import { t } from 'i18next';
 import Loader from '../components/Layout/Loader';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ShipmentTracker = () => {
-  const searchParams = new URLSearchParams(useLocation().search);
+  const searchParams = useMemo(
+    () => new URLSearchParams(location.search),
+    [location.search],
+  );
   const shipmentNumber = searchParams.get('shipment-number');
   const navigate = useNavigate();
 
